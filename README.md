@@ -1,5 +1,6 @@
 # word_analysis
 Computes the frequency of all word lengths, along with corresponding words and total number of unique words  
+  
  Command line arguments at runtime, can be in any order
    
     --infile : indicates that following argument is the name of the input file 
