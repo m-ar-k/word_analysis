@@ -132,26 +132,26 @@ void sort(Nameval *frequency_list, int true) {
         for(temp2=temp1->next;temp2!=NULL;temp2=temp2->next) { 
         	// Case for sorting by word length
           	if (true==0) {
-           		 if(temp2->value < temp1->value) {
-                	a = temp1->value;
-                	b = temp1->count;
-                	temp1->value = temp2->value;
-                	temp1->count = temp2->count;
-                	temp2->value = a;
-                	temp2->count = b;
-              	 }
+           		if(temp2->value < temp1->value) {
+                		a = temp1->value;
+                		b = temp1->count;
+                		temp1->value = temp2->value;
+                		temp1->count = temp2->count;
+                		temp2->value = a;
+                		temp2->count = b;
+              	 	}
           	}
 
           	// Case for sorting by frequency
           	if (true==1) {
-          		 if(temp2->count > temp1->count) {
-                	a = temp1->value;
-                	b = temp1->count;
-                	temp1->value = temp2->value;
-                	temp1->count = temp2->count;
-                	temp2->value = a;
-                	temp2->count = b;
-              	 }
+          		if(temp2->count > temp1->count) {
+                		a = temp1->value;
+                		b = temp1->count;
+                		temp1->value = temp2->value;
+                		temp1->count = temp2->count;
+                		temp2->value = a;
+                		temp2->count = b;
+              		 }
               	 // Revert to first sorting method if more than one shared frequency
               	 if (temp2->count==temp1->count && temp2->value < temp1->value) {
               	 	a = temp1->value;
@@ -161,9 +161,9 @@ void sort(Nameval *frequency_list, int true) {
                 	temp2->value = a;
                 	temp2->count = b;
               	 }
-          	}
-        }
-    }
+         }
+      }
+   }
 }
 
 // Sort a list of words alphabetically
@@ -188,7 +188,6 @@ Nameval *print_words(Nameval *storage_list, int word_length) {
 	Nameval *word_list = NULL;
 	Nameval *ptr2 = NULL;
 		for (Nameval *ptr = storage_list; ptr != NULL; ptr = ptr->next) {
-
 			int boolean = 0;
 			// Create first node for empty list
 			if (word_list==NULL && ptr2==NULL && ptr!=NULL && ptr->value==word_length) {
@@ -364,5 +363,6 @@ int main(int argc, char **argv) {
 	fclose(infile);
 	printf("%s", "Number of unique words: ");
 	printf("%d", unique_words);
+	printf("\n");
 	return 0;
 }
